@@ -1,0 +1,10 @@
+# Ignore all executables
+**/*.exe
+
+# Ignore all config files
+**/*.config
+
+# Ignore service install and uninstall scripts
+install_listener_service.ps1
+uninstall_listener_service.ps1
+
