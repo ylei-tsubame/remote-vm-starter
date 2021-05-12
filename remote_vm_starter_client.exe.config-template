@@ -1,0 +1,17 @@
+<!-- This template can be used without changes to its content. -->
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <system.diagnostics>
+        <!-- Configuration for the Trace calls inside the executable. -->
+        <trace autoflush="false" indentsize="4">
+            <!--
+                Collection of trace listeners to specify destination to output
+                the log. In this case, the destination is the console that is
+                running the executable, i.e., a PowerShell instance.
+            -->
+            <listeners>
+                <add name="console" type="System.Diagnostics.ConsoleTraceListener" />
+            </listeners>
+        </trace>
+    </system.diagnostics>
+</configuration>
