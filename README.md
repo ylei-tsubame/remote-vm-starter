@@ -66,6 +66,20 @@ Compiles the listener as a Windows service with:
 
 Compiles the test executable for testing the listener and client modules together.
 
+### Config Templates
+
+All config templates should end with `.config-template`; they must be renamed to end with `.config` **and** placed in the same directory as their corresponding executable in order to take effect.
+
+An example directory structure of the listener service:
+
+```
+C:
+|-- User
+    |-- RemoteVMStarterService
+        |-- listener_service.exe
+        |-- listener_service.exe.config
+```
+
 ## Listener Service
 
 Both the install and uninstall process requires using `sc.exe` in an **elevated** Command Prompt and PowerShell instance.

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>
+        <!--
+            The listener service's address and port are mandatory.
+            Usually, the loopback address works.
+        -->
+        <add key="listenerAddress" value="" />
+        <add key="listenerPort" value="" />
+        <!--
+            Note the following when adding VM groups:
+            * The key is a hexadecimal representation of a byte in string form.
+            * The value is a comma-separated string containing VM names, i.e.,
+              "VM1,VMb,VMc,VM4"
+
+            Examples (written in the recommended approach):
+            <add key="01" value="VM1" />        (00000001)
+            <add key="02" value="VM2" />        (00000010)
+            <add key="03" value="VM1,VM2" />    (00000011)
+            <add key="04" value="VM3" />        (00000100)
+            <add key="05" value="VM1,VM3" />    (00000101)
+        -->
+    </appSettings>
+    <system.diagnostics>
+        <trace autoflush="false" indentsize="4">
+            <listeners>
+                <!--
+                    The initializeData property is mandatory for the
+                    EventLogTraceListener type. It specifies which source to
+                    continue logging into; in this case, the source is the
+                    service which can be referred to by the service's name (set
+                    when created with sc.exe).
+                -->
+                <add name="eventLog"
+                    type="System.Diagnostics.EventLogTraceListener"
+                    initializeData="RemoteVMStarterService" />
+            </listeners>
+        </trace>
+    </system.diagnostics>
+</configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>
+        <!--
+            The test does not require setting the address and port in this
+            config file; they are set inside the Main function.
+
+            Add VM groups here; see the listener service's template for the
+            format.
+        -->
+    </appSettings>
+    <system.diagnostics>
+        <trace autoflush="false" indentsize="4">
+            <listeners>
+                <add name="console" type="System.Diagnostics.ConsoleTraceListener" />
+            </listeners>
+        </trace>
+    </system.diagnostics>
+</configuration>
